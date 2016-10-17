@@ -7,4 +7,11 @@ and open the template in the editor.
     Created on : 17 oct. 2016, 14:59:50
     Author     : Carine
 */
+.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem {
+    background-color: saddlebrown;
+}
 
+.ui-tabmenu .ui-tabmenu-nav {
+    background-color:saddlebrown ;
+}
+    
