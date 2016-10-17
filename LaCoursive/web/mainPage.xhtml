@@ -1,29 +1,51 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Formulaire d'ajout d'étudiant</title>
+        <title>Parties du corps :</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        <f:view>
+        <h:form>
+            <h1 style="margin-top:0">Formulaire médical</h1>
+            <p:clock />
+            <h2><h:button outcome="ajoutePartie" value="Ajouter une partie"/></h2>
+            <h2>Partie Inferieur : <p:inputText value ="#{corpsForm.saisie.inferieur}"/> </h2>
+            <h2>Partie Supérieur : <p:inputText value ="#{corpsForm.saisie.superieur}"/> </h2>
+            <h2><p:commandButton value="Sauvegarder" update="tableau,listeDyn" actionListener="#{corpsForm.save()}">
+                    <p:effect type="bounce" event="click" />
+                </p:commandButton></h2>
+            <h2><p:commandButton value="Initialiser" update="tableau,listeDyn" actionListener="#{corpsForm.initialize()}">
+                    <p:effect type="bounce" event="click" />
+                </p:commandButton></h2>
+            
+            <p:outputLabel for="listeDyn" value="Liste deroulante" />
+            <p:selectOneListbox id ="listeDyn" value="#{selected}" >
+                <f:selectItems value="#{membresController.getMembres()}" var="saisie" itemLabel="#{saisie.membreInf}" itemValue="#{saisie.idSaisie}"/>
+            </p:selectOneListbox>
+            
+            <p:commandButton value="Supprimer" update="tableau,listeDyn" actionListener="#{corpsForm.delete(selected)}"/>  
+                              
+            <p:dataTable id="tableau" var="saisie2" value="#{membresController.getMembres()}">
+                <p:column headerText="Inferieur">
+                    <h:outputText value="#{saisie2.membreInf}" />
+                </p:column>
 
+                <p:column headerText="Superieur">
+                    <h:outputText value="#{saisie2.membreSup}" />
+                </p:column>
+                
+        </p:dataTable>
+        </h:form>   
 
-            <h:form>
-                <h1><h:outputText value="Create/Edit"/></h1>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="Id:" for="id" />
-                    <h:inputText id="id" value="#{etudiantController.saisie.id}" title="Id" />
-                    <h:outputLabel value="Nom:" for="nom" />
-                    <h:inputText id="nom" value="#{etudiantController.saisie.nom}" title="Nom" />
-                    <h:outputLabel value="Prenom:" for="prenom" />
-                    <h:inputText id="prenom" value="#{etudiantController.saisie.prenom}" title="Prenom" />
-                </h:panelGrid>
-                <h:commandButton action="#{etudiantController.saveEtudiant()}"  value="sauvegarder"/>
-            </h:form>
-        </f:view>
 
     </h:body>
 </html>
-
