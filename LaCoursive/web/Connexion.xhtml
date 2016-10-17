@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Connexion</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <p:panel header="Formulaire d'ajout d'une nouvelle association">
+                <p:messages />
+
+                    <h:panelGrid columns="4" cellpadding="5">
+                        <h:outputLabel for="name" value="Nom association: " />
+                        <p:inputText id="name" value="" label="Name" required="true"/>
+                        <p:message for="name" display="icon" />
+                        <h:outputText value="" />
+
+                        <h:outputLabel for="age" value="Type association: " />
+                        <p:inputText id="type" value="" label="Type" required="true"/>
+                        <p:message for="type" display="icon"/>
+                        <h:outputText value="" />
+
+                        <h:outputLabel for="nomcontact" value="Nom contact: " />
+                        <p:inputText id="nomcontact" value="" label="NomContact" required="true"/>
+                        <p:message for="nomcontact" display="icon"/>
+                        <h:outputText value="" />
+                        
+                        <h:outputLabel for="prenomcontact" value="Prénom contact: " />
+                        <p:inputText id="prenomcontact" value="" label="PrenomContact" required="true"/>
+                        <p:message for="prenomcontact" display="icon"/>
+                        <h:outputText value="" />
+                        
+                        <h:outputLabel for="tel" value="N° Téléphone: " />
+                        <p:inputText id="tel" value="" label="Tel" required="true"/>
+                        <p:message for="tel" display="icon"/>
+                        <h:outputText value="" />
+                        
+                    </h:panelGrid>
+                <p:commandButton value="Valider" ajax="false" icon="ui-icon-check" validateClient="true"/>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
