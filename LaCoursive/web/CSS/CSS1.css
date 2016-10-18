@@ -15,19 +15,19 @@ and open the template in the editor.
 
 .ui-tabmenu .ui-tabmenu-nav {
     background-color:black ;
-    
+
 }
-    
+
 h1{
     color: white;
     font-family: "Vladimir Script";
     font-size: 80px;
     margin-left: 10px;   
-    
+
 }
 
 body{
-    
+
     background-color:black;
    
     
@@ -43,6 +43,33 @@ body{
     left:0px;
     position: absolute;
     z-index: -1000;
-     
-    
+}
+.relative{
+    position : relative;
+
+}
+#formNewAssociation{
+    position:absolute;
+    top: 120px;
+    left : 300px;
+    width: 800px;
+    height: 500px;
+    color:black;
+}
+
+/*fond formulaire nouvelle assoc*/
+.ui-widget-content{
+    background: #8B0000;
+    color : black;
+    border: 1px solid black;
+}
+
+/*bouton valider*/
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+    margin : auto;
+    display: block;
+}
+
+.i-button ui-widget ui-state-default ui-corner-all ui-button-text-only{
+    background: black;
 }
