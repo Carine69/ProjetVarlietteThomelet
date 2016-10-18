@@ -68,7 +68,7 @@ public class AssociationDAO {
     }
     
     
-    public void supprimeEtudiant(Association association) {
+    public void supprimeAssociation(Association association) {
         try
         {
             em.remove(em.merge(association));

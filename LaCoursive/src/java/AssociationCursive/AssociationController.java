@@ -62,6 +62,5 @@ public class AssociationController implements Serializable{
     public void lireEtudiant(ComponentSystemEvent event){
         saisieAssociation= associationDAO.getOneAssociation(id);  
     }
-    
-    
+ 
 }

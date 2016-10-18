@@ -1,12 +1,13 @@
 
 .relative{
     position : relative;
+    margin-left: 20px;
 
 }
 #formNewAssociation{
     position:absolute;
     top: 120px;
-    left : 300px;
+    left : 10px;
     width: 800px;
     height: 500px;
     color:black;
@@ -57,3 +58,7 @@
     margin-bottom: 10px;
 }
 
+.ui-steps.custom{
+    margin-top:80px;
+    margin-left:250px;
+}
