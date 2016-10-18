@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Reservation.findByIdAssociation", query = "SELECT r FROM Reservation r WHERE r.idAssociation = :idAssociation"),
     @NamedQuery(name = "Reservation.findByNomSpectacle", query = "SELECT r FROM Reservation r WHERE r.nomSpectacle = :nomSpectacle"),
     @NamedQuery(name = "Reservation.findByValide", query = "SELECT r FROM Reservation r WHERE r.valide = :valide"),
-    @NamedQuery(name = "Reservation.findByDate", query = "SELECT r FROM Reservation r WHERE r.date = :date")})
+    @NamedQuery(name = "Reservation.findByDate", query = "SELECT r FROM Reservation r WHERE r.dateR = :dateR")})
 public class Reservation implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -66,9 +66,9 @@ public class Reservation implements Serializable {
     private String description;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "Date")
+    @Column(name = "DateR")
     @Temporal(TemporalType.DATE)
-    private Date date;
+    private Date dateR;
 
     public Reservation() {
     }
@@ -77,13 +77,13 @@ public class Reservation implements Serializable {
         this.idReservation = idReservation;
     }
 
-    public Reservation(Integer idReservation, int idAssociation, String nomSpectacle, boolean valide, String description, Date date) {
+    public Reservation(Integer idReservation, int idAssociation, String nomSpectacle, boolean valide, String description, Date dateR) {
         this.idReservation = idReservation;
         this.idAssociation = idAssociation;
         this.nomSpectacle = nomSpectacle;
         this.valide = valide;
         this.description = description;
-        this.date = date;
+        this.dateR = dateR;
     }
 
     public Integer getIdReservation() {
@@ -126,12 +126,12 @@ public class Reservation implements Serializable {
         this.description = description;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getDateR() {
+        return dateR;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDateR(Date dateR) {
+        this.dateR = dateR;
     }
 
     @Override
