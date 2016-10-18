@@ -5,75 +5,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Connexion</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
          <link rel="stylesheet" type="text/css" href="CSS/CSS1.css"/>
+         <link rel="stylesheet" type="text/css" href="CSS/CSS2.css"/>
+         <ui:include src="mainPage.xhtml"/>
+         
     </h:head>
-    <h:body>
-        <header>
-        <div id="friseContainer"> 
-            <h1>La Coursive</h1>
-        </div>
-        </header>
-        
-         <div> 
-      <p:tabMenu activeIndex="#{param.i}">
-    <p:menuitem value="Overview" outcome="mainPage" icon="ui-icon-star">
-        <f:param name="i" value="0" />
-    </p:menuitem>
-    <p:menuitem value="Demos" outcome="mainPage" icon="ui-icon-search">
-        <f:param name="i" value="1" />
-    </p:menuitem>
-    <p:menuitem value="Documentation" outcome="mainPage" icon="ui-icon-document">
-        <f:param name="i" value="2" />
-    </p:menuitem>
-    <p:menuitem value="Support" outcome="mainPage" icon="ui-icon-wrench">
-        <f:param name="i" value="3" />
-    </p:menuitem>
-    <p:menuitem value="Social" outcome="mainPage" icon="ui-icon-person">
-        <f:param name="i" value="4" />
-    </p:menuitem>
-    </p:tabMenu>
-    </div>  
-        
+    <h:body> 
+        <p:steps activeIndex="1" styleClass="custom" readonly="false">
+            <p:menuitem value="Nouvelle association" url="Connexion.xhtml"/>
+            <p:menuitem value="Demande de réservation" url="#"/>
+            <p:menuitem value="Validation" url="#"/>
+        </p:steps>
+              
         <div class="relative">
             <div id="formNewAssociation">
-        <h:form>
-            <p:panel header="Formulaire d'ajout d'une nouvelle association">
-                <p:messages id="messages" />        
-                    <h:panelGrid columns="4" cellpadding="5">
-                        <h:outputLabel for="name" value="Nom association: " />
-                        <p:inputText id="name" value="#{associationController.saisieAssociation.nomAssociation}" label="Name" required="true"/>
-                        <p:message for="name" display="icon" />   
-                        <h:outputText value="" />
+                <h:form>
+                    <p:panel header="Formulaire d'ajout d'une nouvelle association">
+                        <p:messages id="messages" />        
+                            <h:panelGrid columns="4" cellpadding="5">
+                                <h:outputLabel for="name" value="Nom association: " />
+                                <p:inputText id="name" value="#{associationController.saisieAssociation.nomAssociation}" label="Name" required="true"/>
+                                <p:message for="name" display="icon" />   
+                                <h:outputText value="" />
 
-                        <h:outputLabel for="type" value="Type association: " />
-                        <p:inputText id="type" value="#{associationController.saisieAssociation.typeAssociation}" label="Type" required="true"/>
-                        <p:message for="type" display="icon"/>
-                        <h:outputText value="" />
+                                <h:outputLabel for="type" value="Type association: " />
+                                <p:inputText id="type" value="#{associationController.saisieAssociation.typeAssociation}" label="Type" required="true"/>
+                                <p:message for="type" display="icon"/>
+                                <h:outputText value="" />
 
-                        <h:outputLabel for="nomcontact" value="Nom contact: " />
-                        <p:inputText id="nomcontact" value="#{associationController.saisieAssociation.nomContact}" label="NomContact" required="true"/>
-                        <p:message for="nomcontact" display="icon"/>
-                        <h:outputText value="" />
-                        
-                        <h:outputLabel for="prenomcontact" value="Prénom contact: " />
-                        <p:inputText id="prenomcontact" value="#{associationController.saisieAssociation.prenomContact}" label="PrenomContact" required="true"/>
-                        <p:message for="prenomcontact" display="icon"/>
-                        <h:outputText value="" />
-                        
-                        <h:outputLabel for="tel" value="N° Téléphone: " />
-                        <p:inputText id="tel" value="#{associationController.saisieAssociation.telephone}" label="Tel" required="true"/>
-                        <p:message for="tel" display="icon"/>
-                        <h:outputText value="" />
-                        
-                    </h:panelGrid>
-                <p:commandButton value="Valider" action="#{associationController.saveAssociation()}" ajax="false"  />
-            </p:panel>
-        </h:form>
-         </div>       
-     </div>    
+                                <h:outputLabel for="nomcontact" value="Nom contact: " />
+                                <p:inputText id="nomcontact" value="#{associationController.saisieAssociation.nomContact}" label="NomContact" required="true"/>
+                                <p:message for="nomcontact" display="icon"/>
+                                <h:outputText value="" />
+
+                                <h:outputLabel for="prenomcontact" value="Prénom contact: " />
+                                <p:inputText id="prenomcontact" value="#{associationController.saisieAssociation.prenomContact}" label="PrenomContact" required="true"/>
+                                <p:message for="prenomcontact" display="icon"/>
+                                <h:outputText value="" />
+
+                                <h:outputLabel for="tel" value="N° Téléphone: " />
+                                <p:inputText id="tel" value="#{associationController.saisieAssociation.telephone}" label="Tel" required="true"/>
+                                <p:message for="tel" display="icon"/>
+                                <h:outputText value="" />
+
+                            </h:panelGrid>
+                        <p:commandButton value="Valider" action="#{associationController.saveAssociation()}" ajax="false"  />
+                    </p:panel>
+                </h:form>
+            </div>       
+        </div>    
     </h:body>
 </html>

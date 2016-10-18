@@ -1,0 +1,59 @@
+
+.relative{
+    position : relative;
+
+}
+#formNewAssociation{
+    position:absolute;
+    top: 120px;
+    left : 300px;
+    width: 800px;
+    height: 500px;
+    color:black;
+}
+
+/*fond formulaire nouvelle assoc*/
+.ui-widget-content{
+    background: #8B0000;
+    color : black;
+    border: 1px solid black;
+}
+
+/*bouton valider*/
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+    margin : auto;
+    display: block;
+}
+
+/*menu étapes*/
+.i-button ui-widget ui-state-default ui-corner-all ui-button-text-only{
+    background: black;
+}
+
+.ui-steps .ui-steps-item {
+    width: 24%;
+}
+ 
+.ui-state-highlight {
+    text-shadow: none !important;
+}
+ 
+.ui-steps.custom {
+    margin-bottom: 30px;
+}
+ 
+.ui-steps.custom .ui-steps-item .ui-menuitem-link {
+    height: 10px;
+    padding: 0 1em;
+}
+ 
+.ui-steps.custom .ui-steps-item .ui-steps-number {
+    background-color: grey;
+    color: black;
+    display: inline-block;
+    width: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
