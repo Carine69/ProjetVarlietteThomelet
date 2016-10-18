@@ -8,13 +8,41 @@ and open the template in the editor.
     Author     : Carine
 */
 .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem {
-    background-color: saddlebrown;
+    background-color: black;
+    margin-top: 190px;
+    
 }
 
 .ui-tabmenu .ui-tabmenu-nav {
-    background-color:saddlebrown ;
+    background-color:black ;
+    
 }
     
 h1{
+    color: white;
+    font-family: "Vladimir Script";
+    font-size: 80px;
+    margin-left: 10px;   
+    
+}
+
+body{
+    
+    background-color:black;
+   
+    
+}
+
+#friseContainer{
+    
+    
+    background-image: url("../SRC/theatre.jpg");
+    width: 100%;
+    height: 200px;
+    top: 0px;
+    left:0px;
+    position: absolute;
+    z-index: 1000;
+     
     
 }
