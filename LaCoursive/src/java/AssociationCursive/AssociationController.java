@@ -8,6 +8,8 @@ package AssociationCursive;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Named;
 import javax.faces.view.ViewScoped;
@@ -53,6 +55,7 @@ public class AssociationController implements Serializable{
     
     public void saveAssociation(){
         associationDAO.saveAssociations(saisieAssociation);
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("You've registered"));
         /*return "Connexion";*/
     }
     

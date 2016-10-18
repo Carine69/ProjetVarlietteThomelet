@@ -9,12 +9,40 @@
     <h:head>
         <title>Connexion</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+         <link rel="stylesheet" type="text/css" href="CSS/CSS1.css"/>
     </h:head>
     <h:body>
+        <header>
+        <div id="friseContainer"> 
+            <h1>La Coursive</h1>
+        </div>
+        </header>
         
+         <div> 
+      <p:tabMenu activeIndex="#{param.i}">
+    <p:menuitem value="Overview" outcome="mainPage" icon="ui-icon-star">
+        <f:param name="i" value="0" />
+    </p:menuitem>
+    <p:menuitem value="Demos" outcome="mainPage" icon="ui-icon-search">
+        <f:param name="i" value="1" />
+    </p:menuitem>
+    <p:menuitem value="Documentation" outcome="mainPage" icon="ui-icon-document">
+        <f:param name="i" value="2" />
+    </p:menuitem>
+    <p:menuitem value="Support" outcome="mainPage" icon="ui-icon-wrench">
+        <f:param name="i" value="3" />
+    </p:menuitem>
+    <p:menuitem value="Social" outcome="mainPage" icon="ui-icon-person">
+        <f:param name="i" value="4" />
+    </p:menuitem>
+    </p:tabMenu>
+    </div>  
+        
+        <div class="relative">
+            <div id="formNewAssociation">
         <h:form>
             <p:panel header="Formulaire d'ajout d'une nouvelle association">
-            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />        
+                <p:messages id="messages" />        
                     <h:panelGrid columns="4" cellpadding="5">
                         <h:outputLabel for="name" value="Nom association: " />
                         <p:inputText id="name" value="#{associationController.saisieAssociation.nomAssociation}" label="Name" required="true"/>
@@ -42,8 +70,10 @@
                         <h:outputText value="" />
                         
                     </h:panelGrid>
-                <p:commandButton value="Valider" actionListener="#{messagesView.info}" action="#{associationController.saveAssociation()}" ajax="false"  />
+                <p:commandButton value="Valider" action="#{associationController.saveAssociation()}" ajax="false"  />
             </p:panel>
         </h:form>
+         </div>       
+     </div>    
     </h:body>
 </html>
