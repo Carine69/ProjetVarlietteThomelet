@@ -5,7 +5,12 @@
  */
 package ReservationCoursive;
 
+import AssociationCursive.Association;
+import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Named;
 import javax.faces.view.ViewScoped;
 
@@ -19,9 +24,42 @@ public class ReservationController {
 
     @EJB
     private ReservationDAO reservationDAO;
-
+    private Reservation saisieReservation;
+    
+    int id;
 
     public ReservationController() {
+        saisieReservation = new Reservation();
+    }
+     public Reservation getSaisieReservation() {
+        return saisieReservation;
+    }
+
+    public void setSaisieReservation(Association saisieAssociation) {
+        this.saisieReservation = saisieReservation;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
+    public List<Reservation> getReservation(){
+        System.out.println(reservationDAO.getAllReservation().size());
+        return reservationDAO.getAllReservation();
+    }
+    
+    public void saveReservation(){
+        reservationDAO.saveReservations(saisieReservation);
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("You've registered"));
+        /*return "Connexion";*/
+    }
+    
+    public void lireReservation(ComponentSystemEvent event){
+        saisieReservation= reservationDAO.getOneReservation(id);  
+    }
+ 
 }

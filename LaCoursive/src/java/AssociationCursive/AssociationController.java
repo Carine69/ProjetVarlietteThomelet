@@ -48,7 +48,7 @@ public class AssociationController implements Serializable{
         this.id = id;
     }
     
-    public List<Association> getEtudiants(){
+    public List<Association> getAssociation(){
         System.out.println(associationDAO.getAllAssociations().size());
         return associationDAO.getAllAssociations();
     }
@@ -59,7 +59,7 @@ public class AssociationController implements Serializable{
         /*return "Connexion";*/
     }
     
-    public void lireEtudiant(ComponentSystemEvent event){
+    public void lireAssociation(ComponentSystemEvent event){
         saisieAssociation= associationDAO.getOneAssociation(id);  
     }
  
