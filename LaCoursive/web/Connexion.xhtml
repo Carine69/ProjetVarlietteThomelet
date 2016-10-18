@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
@@ -17,36 +14,35 @@ and open the template in the editor.
         
         <h:form>
             <p:panel header="Formulaire d'ajout d'une nouvelle association">
-                <p:messages />
-
+            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />        
                     <h:panelGrid columns="4" cellpadding="5">
                         <h:outputLabel for="name" value="Nom association: " />
-                        <p:inputText id="name" value="" label="Name" required="true"/>
-                        <p:message for="name" display="icon" />
+                        <p:inputText id="name" value="#{associationController.saisieAssociation.nomAssociation}" label="Name" required="true"/>
+                        <p:message for="name" display="icon" />   
                         <h:outputText value="" />
 
-                        <h:outputLabel for="age" value="Type association: " />
-                        <p:inputText id="type" value="" label="Type" required="true"/>
+                        <h:outputLabel for="type" value="Type association: " />
+                        <p:inputText id="type" value="#{associationController.saisieAssociation.typeAssociation}" label="Type" required="true"/>
                         <p:message for="type" display="icon"/>
                         <h:outputText value="" />
 
                         <h:outputLabel for="nomcontact" value="Nom contact: " />
-                        <p:inputText id="nomcontact" value="" label="NomContact" required="true"/>
+                        <p:inputText id="nomcontact" value="#{associationController.saisieAssociation.nomContact}" label="NomContact" required="true"/>
                         <p:message for="nomcontact" display="icon"/>
                         <h:outputText value="" />
                         
                         <h:outputLabel for="prenomcontact" value="Prénom contact: " />
-                        <p:inputText id="prenomcontact" value="" label="PrenomContact" required="true"/>
+                        <p:inputText id="prenomcontact" value="#{associationController.saisieAssociation.prenomContact}" label="PrenomContact" required="true"/>
                         <p:message for="prenomcontact" display="icon"/>
                         <h:outputText value="" />
                         
                         <h:outputLabel for="tel" value="N° Téléphone: " />
-                        <p:inputText id="tel" value="" label="Tel" required="true"/>
+                        <p:inputText id="tel" value="#{associationController.saisieAssociation.telephone}" label="Tel" required="true"/>
                         <p:message for="tel" display="icon"/>
                         <h:outputText value="" />
                         
                     </h:panelGrid>
-                <p:commandButton value="Valider" ajax="false" icon="ui-icon-check" validateClient="true"/>
+                <p:commandButton value="Valider" actionListener="#{messagesView.info}" action="#{associationController.saveAssociation()}" ajax="false"  />
             </p:panel>
         </h:form>
     </h:body>
