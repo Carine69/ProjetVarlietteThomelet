@@ -5,6 +5,7 @@
  */
 package ReservationCoursive;
 
+
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
@@ -60,6 +61,5 @@ public class ReservationController implements Serializable  {
     
     public void lireReservation(ComponentSystemEvent event){
         saisieReservation= reservationDAO.getOneReservation(id);  
-    }
- 
+    } 
 }
