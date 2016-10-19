@@ -5,7 +5,6 @@
  */
 package ReservationCoursive;
 
-import AssociationCursive.Association;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -14,7 +13,7 @@ import javax.persistence.Query;
 
 /**
  *
- * @author Carine
+ * @author thomd
  */
 @Stateless
 public class ReservationDAO {
@@ -26,7 +25,14 @@ public class ReservationDAO {
         em.persist(object);
     }
 
-    public List<Reservation> getAllReservations(){
+    // Add business logic below. (Right-click in editor and choose
+    
+    // "Insert Code > Add Business Method")
+
+    public void businessMethod() {
+    }
+    
+     public List<Reservation> getAllReservation(){
         Query query =em.createNamedQuery("Reservation.findAll");
         try{
             return query.getResultList();
@@ -42,8 +48,8 @@ public class ReservationDAO {
             return (Reservation)query.getSingleResult();
         }
         catch (Exception e){
-            System.err.println("pas de réservation avec cet ID"); 
-        }
+            System.err.println("pas de reservation avec cet ID"); 
+           }
         return null;
     }
     
@@ -76,5 +82,4 @@ public class ReservationDAO {
             System.err.println(e.getMessage());  
         }
     }   
- 
 }

@@ -24,5 +24,31 @@
             <p:menuitem value="Validation" url="#"/>
         </p:steps>
         
+        <div class="relative">
+            <div id="formNewAssociation">
+                <h:form>
+                    <p:panel header="Formulaire d'ajout d'une nouvelle association">
+                              
+                            <h:panelGrid columns="4" cellpadding="5">
+                                <h:outputLabel for="name" value="Nom du Spectacle: " />
+                                <p:inputText id="name" value="#{reservationController.saisieReservation.nomSpectacle}" label="Name" required="true"/>
+                                <p:message for="name" display="icon" />   
+                                <h:outputText value="" />
+
+                                <h:outputLabel for="description" value="Description: " />
+                                <p:inputText id="description" value="#{reservationController.saisieReservation.description}" label="Description" required="true"/>
+                                <p:message for="description" display="icon"/>
+                                <h:outputText value="" />
+
+                                <h:outputLabel for="dateR" value="Date du Spectacle: " />
+                                <p:inputText id="dateR" value="#{reservationController.saisieReservation.dateR}" label="DateR" required="true"/>
+                                <p:message for="dateR" display="icon"/>
+                                <h:outputText value="" />
+                            </h:panelGrid>
+                        <p:commandButton value="Valider" action="#{reservationController.saveReservation()}"/>
+                    </p:panel>
+                </h:form>
+            </div>       
+        </div>  
     </h:body>
 </html>

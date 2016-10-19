@@ -47,7 +47,7 @@ public class AssociationController implements Serializable{
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public List<Association> getAssociations(){
         System.out.println(associationDAO.getAllAssociations().size());
         return associationDAO.getAllAssociations();

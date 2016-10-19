@@ -37,6 +37,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Reservation.findByNomSpectacle", query = "SELECT r FROM Reservation r WHERE r.nomSpectacle = :nomSpectacle"),
     @NamedQuery(name = "Reservation.findByValide", query = "SELECT r FROM Reservation r WHERE r.valide = :valide"),
     @NamedQuery(name = "Reservation.findByDateR", query = "SELECT r FROM Reservation r WHERE r.dateR = :dateR")})
+
 public class Reservation implements Serializable {
 
     private static final long serialVersionUID = 1L;
