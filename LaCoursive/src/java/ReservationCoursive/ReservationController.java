@@ -5,7 +5,7 @@
  */
 package ReservationCoursive;
 
-import AssociationCursive.Association;
+import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -20,7 +20,7 @@ import javax.faces.view.ViewScoped;
  */
 @Named(value = "reservationController")
 @ViewScoped
-public class ReservationController {
+public class ReservationController implements Serializable  {
 
     @EJB
     private ReservationDAO reservationDAO;
@@ -35,7 +35,7 @@ public class ReservationController {
         return saisieReservation;
     }
 
-    public void setSaisieReservation(Association saisieAssociation) {
+    public void setSaisieReservation(Reservation saisieReservation) {
         this.saisieReservation = saisieReservation;
     }
 
