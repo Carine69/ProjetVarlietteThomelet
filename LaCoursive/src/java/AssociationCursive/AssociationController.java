@@ -47,16 +47,15 @@ public class AssociationController implements Serializable{
     public void setId(int id) {
         this.id = id;
     }
-    
-    public List<Association> getAssociation(){
+
+    public List<Association> getAssociations(){
         System.out.println(associationDAO.getAllAssociations().size());
         return associationDAO.getAllAssociations();
     }
     
-    public void saveAssociation(){
+    public String saveAssociation(){
         associationDAO.saveAssociations(saisieAssociation);
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("You've registered"));
-        /*return "Connexion";*/
+        return "NouvelleReservation";
     }
     
     public void lireAssociation(ComponentSystemEvent event){
